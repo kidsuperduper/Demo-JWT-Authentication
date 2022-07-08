@@ -56,6 +56,7 @@ export const getAllUsers = async (accessToken, dispatch, axiosJWT) => {
             userListDom.innerHTML = `<h2>There is no user!</h2>`;
         } else {
             dispatch(getUserSuccess(res.data));
+            console.log(res);
         }
     } catch (error) {
         userListDom.innerHTML = `<h2>${error.response.data}</h2>`;

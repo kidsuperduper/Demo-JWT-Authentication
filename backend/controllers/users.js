@@ -28,7 +28,7 @@ const userController = {
             });
             res.status(200).json(user);
         } catch (err) {
-            res.status(500).json({ err });
+            res.status(500).json(err.message);
         }
     },
 
@@ -90,7 +90,7 @@ const userController = {
                 res.status(200).json({ ...others, accessToken });
             }
         } catch (err) {
-            res.status(500).json({ err });
+            res.status(500).json(err.message);
         }
     },
 
@@ -99,7 +99,7 @@ const userController = {
             const users = await User.find();
             res.status(200).json(users);
         } catch (err) {
-            res.status(500).json({ err });
+            res.status(500).json(err.message);
         }
     },
 
@@ -113,7 +113,7 @@ const userController = {
             }
             res.status(200).json("Delete successfully");
         } catch (err) {
-            res.status(500).json(err);
+            res.status(500).json(err.message);
         }
     },
 
@@ -156,7 +156,7 @@ const userController = {
                 }
             );
         } catch (err) {
-            res.status(500).json({ err });
+            res.status(500).json(err.message);
         }
     },
 
@@ -168,7 +168,7 @@ const userController = {
             );
             res.status(200).json("Logged out successfully");
         } catch (err) {
-            res.status(500).json({ err });
+            res.status(500).json(err.message);
         }
     },
 };
